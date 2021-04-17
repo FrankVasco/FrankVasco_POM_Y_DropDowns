@@ -42,6 +42,10 @@ public class DropdownPage extends BasePage {
         return getTextElement(dayLabel);
     }
 
+    /***
+     * Get info from the label in the multiselect section
+     * @return
+     */
     public String getOptionSelectedFromMultiselect(){
         verifyLabelMultiselect();
         return getTextElement(multiSelectLabel);
@@ -74,13 +78,19 @@ public class DropdownPage extends BasePage {
         this.selectValueDropdown(selectDayDropdown, option);
     }
 
-
+    /***
+     * Selects a option from the multislect
+     * @param city
+     */
     public void selectOptionMultiselect(String city){
         Select dropdownCities = new Select(getDriver().findElement(By.cssSelector(multiSelectLabel)));
         dropdownCities.selectByVisibleText(city);
         clickButtonFirstSelect(btnFirstSelected);
     }
 
+    /***
+     * Click in the button first selected
+     */
     public void clickButon(){
         clickButtonFirstSelect(btnFirstSelected);
     }
